@@ -1,0 +1,11 @@
+<h1> Parks </h1>
+
+<% @parks.each do |park| %>
+  <%= link_to park.name, park_path(park)%><br>
+  <%= park.address%><br>
+  <%= park.city%><br>
+  <%= park.state%><br>
+  <%= park.zipcode%><br>
+  <%= park.ownership%><br>
+  GPS: <%= park.latitude%>  <%= park.longitude%><br><br>
+<%end%>
