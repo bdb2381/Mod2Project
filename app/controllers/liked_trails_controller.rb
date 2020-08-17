@@ -1,0 +1,2 @@
+class LikedTrailsController < ApplicationController
+end

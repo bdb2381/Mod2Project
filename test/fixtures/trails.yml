@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  park: one
+  name: MyString
+  length: 1.5
+  direction: MyString
+  trail_description: MyText
+  trail_latitude: 9.99
+  trail_longitude: 9.99
+
+two:
+  park: two
+  name: MyString
+  length: 1.5
+  direction: MyString
+  trail_description: MyText
+  trail_latitude: 9.99
+  trail_longitude: 9.99
