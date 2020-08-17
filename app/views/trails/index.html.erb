@@ -1,0 +1,13 @@
+<h1> Trails </h1>
+
+<% @trails.each do |trail| %>
+
+    <%= link_to trail.name, trail %><br>
+    <%= trail.length %><br>
+    <%= trail.trail_description %><br>
+    <%= trail.direction %><br>
+    <%= trail.trail_latitude %><br>
+    <%= trail.trail_longitude %><br>
+    <p></p>
+<% end %>
+

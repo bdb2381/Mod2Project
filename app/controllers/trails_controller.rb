@@ -1,4 +1,11 @@
 class TrailsController < ApplicationController
-    # belongs_to :park
-    # has_many :activities, dependent: :destroy
+
+    def index
+        @trails = Trail.all
+    end
+
+    def show
+        @trail = Trail.find(params[:id])
+    end
+    
 end
