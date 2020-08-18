@@ -1,21 +1,14 @@
-<%=@park.name%><br>
-  <%= @park.address%><br>
-  <%= @park.city%>
-  <%= @park.state%>
-  <%= @park.zipcode%><br>
-  <%= @park.ownership%><br>
-  GPS: <%= @park.latitude%>  <%= @park.longitude%><br><br>
 
+<h1><%=link_to @park.name, trails_path%></h1><br>
+<%= @park.address %><br>
+<%= @park.city %>
+<%= @park.state %>
+<%= @park.zipcode %><br>
+<%= @park.ownership %><br>
+GPS: <%= @park.latitude %>  <%= @park.longitude %><br><br>
 
-
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@park.latitude%>,<%=@park.longitude%>" allowfullscreen>
-</iframe>
-
-
-<%# https://www.google.com/maps/embed/v1/place
-  ?key=YOUR_API_KEY
-  &q=Eiffel+Tower,Paris+France %>
+<h1><%= @trail.name%></h1><br>
+Length: <%= @trail.length%>mi<br>
+Description: <%= @trail.trail_description%><br>
+Route Type: <%= @trail.direction%><br>
+GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>

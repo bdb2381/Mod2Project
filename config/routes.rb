@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   resources :trails
 # get '/', to: 
 # root to:  "/"
-get "homepage/index" 
+
 root to: "homepage#index"
 
+
+# get "map", to: "homepage#show"
+
+get "map", to: "parks#index"
 
 devise_scope :user do
   get 'login', to: 'devise/sessions#new'
