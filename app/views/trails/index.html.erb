@@ -3,9 +3,9 @@
 <% @trails.each do |trail| %>
 
     <%= link_to trail.name, trail %><br>
-    <%= trail.length %><br>
-    <%= trail.trail_description %><br>
-    <%= trail.direction %><br>
+    Length: <%= trail.length %>mi<br>
+    Description: <%= trail.trail_description %><br>
+    Route Type: <%= trail.direction %><br>
     <%= trail.trail_latitude %><br>
     <%= trail.trail_longitude %><br>
     <p></p>

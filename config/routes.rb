@@ -12,5 +12,8 @@ Rails.application.routes.draw do
 root to: "homepage#index"
 
 
-get "map", to: "homepage#show"
+# get "map", to: "homepage#show"
+
+get "map", to: "parks#index"
+
 end
