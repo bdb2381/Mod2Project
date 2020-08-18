@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   resources :activities
   resources :parks
   resources :trails
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+# get '/', to: 
+# root to:  "/"
+get "homepage/index" 
+root to: "homepage#index"
 end
