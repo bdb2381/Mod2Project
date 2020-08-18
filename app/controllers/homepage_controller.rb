@@ -5,6 +5,9 @@ class HomepageController < ApplicationController
 
   end 
 
+  def show
+    @parks = Park.all 
+  end
 
 
 end #class end 

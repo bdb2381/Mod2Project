@@ -23,7 +23,7 @@ Park.create({
     city: "Walnut Creek",
     state: "CA",
     zipcode: 94598,
-    latitude: 37.877053,
+    latitude: 37.877053, 
     longitude: -121.923864,
     ownership: "California"
 })
@@ -32,8 +32,8 @@ Park.create({
     city: "Mill Valley",
     state: "CA",
     zipcode: 94941,
-    latitude: 30.233540,
-    longitude: -81.510353,
+    latitude: 37.902545,
+    longitude: -122.569723,
     ownership: "California"
 })
 Park.create({
@@ -41,8 +41,8 @@ Park.create({
     city: "Bolinas",
     state: "CA",
     zipcode: 94970,
-    latitude: 37.896742,
-    longitude: 122.640938,
+    latitude: 37.900773,
+    longitude: -122.644259,
     ownership: "California"
 })
 Park.create({ #mountain_biking
