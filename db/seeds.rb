@@ -69,7 +69,7 @@
 #     latitude: 38.014476,
 #     longitude: -122.614345,
 #     ownership: "Public",
-#     image_url: "https://cdn-assets.alltrails.com/uploads/photo/image/25402967/extra_large_dc2a7e786b66015909c76315070ab160.jpg"
+#     image_url: "c"
 # })
 
 # Park.create({
@@ -79,7 +79,7 @@
 #     state: "WA",
 #     zipcode: 98241,
 #     ownership: "Public",
-#     image_url: "https://peakvisor.com/img/news/alpine-lakes-wilderness.jpg"
+#     image_url: "c"
 # }) 
 
 # Park.create({

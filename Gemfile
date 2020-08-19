@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
  gem 'bcrypt', '~> 3.1.7'
 
 
-gem 'devise'
+# gem 'devise'   only need one copy
 gem 'devise'
 gem 'bootstrap', '~>4.0.0'
 gem 'jquery-rails'
