@@ -34,7 +34,8 @@
                 title: "<%=park.name%>"
             });
             marker.addListener('click', function () {
-                document.getElementById('parkinfo').src = '/parks/<%=park.id%>'
+                // document.getElementById('parkinfo').src = '/parks/<%=park.id%>'
+                window.location.href = '/parks/<%=park.id%>'
 
             });
         <% end %>

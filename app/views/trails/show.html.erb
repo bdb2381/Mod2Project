@@ -3,11 +3,5 @@ Length: <%= @trail.length%>mi<br>
 Description: <%= @trail.trail_description%><br>
 Route Type: <%= @trail.direction%><br>
 GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>
+<%= @trail.image_url %>
 
-
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>" allowfullscreen>
-</iframe>

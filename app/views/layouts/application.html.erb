@@ -10,38 +10,52 @@
   </head>
 
   <body>
-    <nav> </nav>
+
+<center>
+  <nav id="wrapper">
+    <ul>
+      <a href="#">
+        <li> Find A Park </li>
+      </a>
+      <a href="#">
+        <li> Find A Trail </li>
+      </a>
+      <a href="#">
+        <li> Our Services </li>
+      </a>
+      <a href="#">
+        <li> Contact </li>
+      </a>
+    </ul>
+  </nav>
+</center>
 
   
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-<p class="navbar-text float-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Join", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+    <p class="navbar-text float-right">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Join", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </p>
 
-<p>
-<%= link_to "Find A Park", parks_path()%>
-<%= link_to "Find A Trail", trails_path()%>
-</p>
+    <p>
+      <%= link_to "Find A Park", parks_path()%>
+      <%= link_to "Find A Trail", trails_path()%>
+    </p>
 
     <%= yield %>
 
-
-
   </body>
-
-
 
 </html>
