@@ -2,22 +2,7 @@ class LikedTrailsController < ApplicationController
   before_action :authenticate_user!
   
   
-  # def create
-  #   @liked_trail = LikedTrail.new(trail_id: params[:trail_id], user_id: current_user.id)
-  #   # byebug 
-  #   if @liked_trail.save
-  #     flash[:succcess] = "This trail is now saved to your profile."
-  #     redirect_to trail_path(@trail)
-      
-  #   else 
-  #     flash[:error] = "Couldn't save the trail"
-      
-  #   end
-    
-    
-  # end 
-
-  def create 
+    def create 
     if LikedTrail.find_or_create_by(trail_id: params[:trail_id], user_id: current_user.id)
       # flash[:notices]
       redirect_to trail_path(params[:trail_id]), notice: "Trail added to My Likes" 
