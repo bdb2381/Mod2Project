@@ -18,9 +18,9 @@ class LikedTrailsController < ApplicationController
   # end 
 
   def create 
-    trail = params[:trail_id]
-    if LikedTrail.create(trail_id: params[:trail_id], user_id: current_user.id)
-      redirect_to trail_path(trail) 
+    if LikedTrail.find_or_create_by(trail_id: params[:trail_id], user_id: current_user.id)
+      # flash[:notices]
+      redirect_to trail_path(params[:trail_id]), notice: "Trail added to My Likes" 
     end 
     
   end
