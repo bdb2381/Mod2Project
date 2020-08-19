@@ -1,6 +1,6 @@
 
 <div id="parks">
-    <h1 class="park"><%=link_to @park.name, trails_path%></h1><br>
+    <h2 class="park"><%= @park.name%></h2><br>
     <div class="attribute-wrapper">
         <%= @park.address %><br>
         <%= @park.city %>
@@ -22,21 +22,10 @@
         
 
 <div id="trails">
-    <h1 class="trail"><%= @trail.name%></h1><br>
+    <h2 class="trail"><%= link_to @trail.name, trail_path %></h2><br>
     <div class="attribute-wrapper">
         <b>Length:</b> <%= @trail.length%>mi<br>
-        <b>Description:</b> <%= @trail.trail_description%><br>
-        <b>Route Type:</b> <%= @trail.direction%><br>
         <img src= "<%= @trail.image_url %>"> 
     </div>
 </div>
 
-<div>
-    <div id="trailmap" ></div>
-    <iframe 
-    width="500"
-    height="350"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.name%>&zoom=10" allowfullscreen>
-    </iframe>
-</div>
