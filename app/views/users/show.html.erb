@@ -1,0 +1,10 @@
+<h1><%#= @user.username %></h1>
+<h4><%= @user.email%></h5>
+
+<h2>Your Liked Trails:</h2>
+
+<% @user.liked_trails.each do |liked_trail|%>
+  <h4> <%= link_to liked_trail.trail.name, trail_path(liked_trail)%> located in
+
+  <%= link_to liked_trail.trail.park.name, park_path(liked_trail.trail.park)%>, <%= liked_trail.trail.park.state%>   </h4><br>
+<%end%>

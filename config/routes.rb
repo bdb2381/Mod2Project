@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :equipment
   resources :liked_trails
-  resources :users
+  resources :users, only: [:show, :edit]
   resources :activities
   resources :parks
   resources :trails
