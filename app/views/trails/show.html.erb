@@ -1,3 +1,15 @@
+<%if flash[:notice]%>
+  <%flash.each do |notice, msg| %>
+    <h1><%=msg%></h1>
+  <%end%>
+<%end%>
+
+<%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%>
+<br>
+
+This trail has been liked: <%=@trail.likescounter%>
+
+
 <div>
   <h2><%= link_to @trail.name, trail_path %></h2><br>
   <div><b>Length:</b> <%= @trail.length%>mi<br></div>
@@ -15,3 +27,6 @@
     src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=10" allowfullscreen>
     </iframe>
 </div>
+
+
+
