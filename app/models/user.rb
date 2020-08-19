@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     has_many :trails, dependent: :destroy
+    has_many :liked_trails
+    has_many :trails, through: :liked_trails
 end

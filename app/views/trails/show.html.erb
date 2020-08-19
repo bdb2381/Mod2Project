@@ -1,8 +1,15 @@
+<%if flash[:success]%>
+  <%=%>
+<%end%>
+
 <h1><%= @trail.name%></h1><br>
 Length: <%= @trail.length%>mi<br>
 Description: <%= @trail.trail_description%><br>
 Route Type: <%= @trail.direction%><br>
 GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>
+
+
+<%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%>
 
 
 <iframe
