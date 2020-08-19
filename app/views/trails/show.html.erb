@@ -12,7 +12,7 @@ GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>
 
 
 <%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%>
-
+<br>
 
 <iframe
   width="600"
@@ -21,3 +21,5 @@ GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>" allowfullscreen>
 </iframe>
 
+<br>
+This trail has been liked: <%=@trail.likescounter%>
