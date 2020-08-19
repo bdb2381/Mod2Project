@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_205301) do
+ActiveRecord::Schema.define(version: 2020_08_19_015517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_205301) do
     t.string "intensity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["trail_id"], name: "index_activities_on_trail_id"
   end
 
@@ -54,6 +55,18 @@ ActiveRecord::Schema.define(version: 2020_08_18_205301) do
     t.string "ownership"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "park_id", null: false
+    t.bigint "trail_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_photos_on_activity_id"
+    t.index ["park_id"], name: "index_photos_on_park_id"
+    t.index ["trail_id"], name: "index_photos_on_trail_id"
   end
 
   create_table "trails", force: :cascade do |t|
@@ -66,12 +79,14 @@ ActiveRecord::Schema.define(version: 2020_08_18_205301) do
     t.decimal "trail_longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["park_id"], name: "index_trails_on_park_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "password"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -87,5 +102,8 @@ ActiveRecord::Schema.define(version: 2020_08_18_205301) do
   add_foreign_key "equipment", "activities"
   add_foreign_key "liked_trails", "trails"
   add_foreign_key "liked_trails", "users"
+  add_foreign_key "photos", "activities"
+  add_foreign_key "photos", "parks"
+  add_foreign_key "photos", "trails"
   add_foreign_key "trails", "parks"
 end

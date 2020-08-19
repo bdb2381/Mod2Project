@@ -1,47 +1,45 @@
-<h1> Parks </h1>
-<h2> Select a Park </h2>
-
 <script defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&callback=initMap">
 </script>
 
-<div style="display: flex";>
-    <div id="map" style="height:1000px; width:800px"></div>
+<div id="map-container-google-1" class="mx-auto" style="width: 400px">
+<div class="text-center"><h1> Parks </h1><div>
+<div class="text-center"><h2> Select a Park </h2></div>
+<%# <div class="mx-auto" style="width: 200px"> %>
+    <%# <div style="display: flex";> %>
+        <div id="map" style="height:1000px; width:800px" class="flex-sm-column"></div>
 
-    <iframe 
-        id="parkinfo"
-        width="600"
-        height="450"
-        frameborder="0" style="border:0" allowfullscreen>
-    </iframe>
+        <iframe
+            id="parkinfo"
+            width="600"
+            height="450"
+            frameborder="0" style="border:0" allowfullscreen>
+        </iframe>
+    <%# </div> %>
 </div>
+    <script>
+        var marker;
 
-<script>
-    var marker;
-
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 6,
-            center: {lat: 42.402900, lng: -122.885240}
-        });
-        <% @parks.filter{|park| park.latitude && park.latitude}.each do |park| %>
-          
-            marker = new google.maps.Marker({
-                map: map,
-                draggable: false,
-                animation: google.maps.Animation.DROP,
-                position: {lat: <%=park.latitude%>, lng: <%=park.longitude%>},
-                title: "<%=park.name%>"
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 6,
+                center: {lat: 42.402900, lng: -122.885240}
             });
-            marker.addListener('click', function () {
-                document.getElementById('parkinfo').src = '/parks/<%=park.id%>'
+            <% @parks.filter{|park| park.latitude && park.latitude}.each do |park| %>
+            
+                marker = new google.maps.Marker({
+                    map: map,
+                    draggable: false,
+                    animation: google.maps.Animation.DROP,
+                    position: {lat: <%=park.latitude%>, lng: <%=park.longitude%>},
+                    title: "<%=park.name%>"
+                });
+                marker.addListener('click', function () {
+                    // document.getElementById('parkinfo').src = '/parks/<%=park.id%>'
+                    window.location.href = '/parks/<%=park.id%>'
 
-            });
-        <% end %>
-    }
+                });
+            <% end %>
+        }
+    </script>
 
-    
-
-
-
-</script>

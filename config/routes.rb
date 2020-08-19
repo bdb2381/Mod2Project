@@ -17,6 +17,8 @@ root to: "homepage#index"
 
 get "map", to: "parks#index"
 
+get "trails/state/:state", to: "trails#index", as: "trail_state"
+
 devise_scope :user do
   get 'login', to: 'devise/sessions#new'
   get 'join', to: 'devise/registrations#new'

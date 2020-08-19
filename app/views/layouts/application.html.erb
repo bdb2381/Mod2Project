@@ -10,9 +10,39 @@
   </head>
 
   <body>
-    <nav> </nav>
+
+<%# <center>
+  <nav id="wrapper">
+    <ul>
+      <a href="#">
+        <li> Find A Park </li>
+      </a>
+      <a href="#">
+        <li> Find A Trail </li>
+      </a>
+     <!-- <a href="#">
+        <li> Our Services </li>
+      </a>
+      <a href="#">
+        <li> Contact </li>
+      </a> --> 
+    </ul>
+  </nav>
+</center> %>
 
   
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <p class="navbar-text float-right">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>
+  
+
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -39,12 +69,9 @@
 
 </p>
 
+
     <%= yield %>
 
-
-
   </body>
-
-
 
 </html>

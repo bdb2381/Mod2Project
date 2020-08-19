@@ -4,22 +4,29 @@
   <%end%>
 <%end%>
 
-<h1><%= @trail.name%></h1><br>
-Length: <%= @trail.length%>mi<br>
-Description: <%= @trail.trail_description%><br>
-Route Type: <%= @trail.direction%><br>
-GPS: <%= @trail.trail_latitude%> <%= @trail.trail_longitude%><br>
-
-
 <%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%>
 <br>
 
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>" allowfullscreen>
-</iframe>
-
-<br>
 This trail has been liked: <%=@trail.likescounter%>
+
+
+<div>
+  <h2><%= link_to @trail.name, trail_path %></h2><br>
+  <div><b>Length:</b> <%= @trail.length%>mi<br></div>
+  <div><b>Description:</b> <%= @trail.trail_description%><br></div>
+  <div><b>Route Type:</b> <%= @trail.direction%><br></div>
+  <div> <img src="<%= @trail.image_url %>"></div>
+</div>
+
+<div>
+    <div id="trailmap" ></div>
+    <iframe 
+    width="500"
+    height="350"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=10" allowfullscreen>
+    </iframe>
+</div>
+
+
+
