@@ -1,11 +1,29 @@
- <h1><%= link_to "California Trails", trail_state_path("CA")%></h1>
- <h1><%= link_to "Washington Trails", trail_state_path("WA")%></h1>
+ See Trails by State: <%= link_to " California Trails", trail_state_path("CA")%> | 
+ <%= link_to "Washington Trails", trail_state_path("WA")%><br><br>
 
 
-  <%Trail.bystate("WA").each do |trail| %><br>
-    <%= trail.name%>
-  <%end%>
 
+<%# if there is a url request to show by state, show only that state%>
+<div class="album ">
+   <div class="container-fluid">
+      <div class="row">
+          <%Trail.bystate(state:params[:state]).each do |trail| %>
+            <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
+              <div class="card-body">
+                <h5 class="card-title"><%= trail.name%>, <%=trail.park.state%></h5>
+                <p class="card-text"> <%=trail.direction%></p>
+                <%=link_to "Check Out This trail", trail_path(trail), :class=>"btn btn-primary"%>
+              </div>
+            </div>
+          <%end%>
+    </div>
+  </div>
+</div>
+
+
+<%if !params[:state]%>
+<%# if there is no request for trails by state, show all the trails%>
 <div class="album ">
    <div class="container-fluid">
       <div class="row">
@@ -22,3 +40,4 @@
     </div>
   </div>
 </div>
+<%end%>

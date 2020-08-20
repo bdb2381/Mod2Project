@@ -14,5 +14,7 @@ class TrailsController < ApplicationController
         @park = Park.find(params[:id])
     end
 
+   
+
     
 end

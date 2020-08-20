@@ -10,9 +10,9 @@ class Trail < ApplicationRecord
     liked_trails.count
   end
 
-  def self.bystate(state)
-    
-      Trail.joins(:park).where(parks: {state: state})
+  def self.bystate(state:, amount: "10")
+    # default is to pull 10 trails from DB. 
+      Trail.joins(:park).where(parks: {state: state}).take(amount)
   
   end
 
