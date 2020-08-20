@@ -1,31 +1,30 @@
 
-<div id="parks">
-    <h2 class="park"><%= @park.name%></h2><br>
-    <div class="attribute-wrapper">
+<div class="text-center font-weight-light">
+    <h2 class="font-weight-light list-inline-item mt-5"><%= @park.name%></h2><br>
         <%= @park.address %><br>
         <%= @park.city %>
         <%= @park.state %>
         <%= @park.zipcode %><br>
-        <img src= "<%= @park.image_url %>"> 
+</div>
+
+<div class="d-flex justify-content-center row">
+    <div>
+        <div id="parkmap" ></div>
+        <iframe
+            width="500"
+            height="350"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@park.latitude%>,<%=@park.longitude%>&zoom=14" allowfullscreen>
+        </iframe>
     </div>
 </div>
+<img src= "<%= @park.image_url %>" class="rounded mx-auto d-block img-fluid" width="900" height="400"> 
 
-<div>
-    <div id="parkmap" ></div>
-    <iframe
-        width="500"
-        height="350"
-        frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@park.latitude%>,<%=@park.longitude%>&zoom=14" allowfullscreen>
-    </iframe>
-</div>
-        
-
-<div id="trails">
-    <h2 class="trail"><%= link_to @trail.name, trail_path %></h2><br>
+<div class="text-center mt-5 font-weight-light">    
+    <h2 class="font-weight-light">Trails</h2>
+    <h3 class="font-weight-light mt-5"><%= link_to @trail.name, trail_path %></h3><br>
     <div class="attribute-wrapper">
         <b>Length:</b> <%= @trail.length%>mi<br>
-        <img src= "<%= @trail.image_url %>"> 
+        <img src= "<%= @trail.image_url %>" class="rounded mx-auto d-block img-fluid" width="900" height="400"> 
     </div>
 </div>
-

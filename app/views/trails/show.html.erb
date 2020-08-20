@@ -4,20 +4,25 @@
   <%end%>
 <%end%>
 
-<%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%><br>
+<div class="text-center font-weight-light mt-5">
+  <h2 class="font-weight-light"><%= @trail.name %></h2><br>
+  <div><img src="<%= @trail.image_url %>" class="rounded mx-auto d-block img-fluid" width="700" height="400"></div>
 
-This trail has been liked: <%=@trail.likescounter%>
+ 
+  <div class="align-self-baseline mt-3">
+    <%=button_to "Like", liked_trails_path(trail_id:@trail), method: :post%><br>
+    This trail has been liked: <%=@trail.likescounter%>
+  </div>
+ 
 
-
-<div>
-  <h2><%= link_to @trail.name, trail_path %></h2><br>
-  <div><b>Length:</b> <%= @trail.length%>mi<br></div>
-  <div><b>Description:</b> <%= @trail.trail_description%><br></div>
+  <div class="mt-3"><b>Length:</b> <%= @trail.length%>mi<br></div>
+  <div class="container"><b>Description:</b> <%= @trail.trail_description%><br></div>
   <div><b>Route Type:</b> <%= @trail.direction%><br></div>
-  <div> <img src="<%= @trail.image_url %>"></div>
 </div>
 
-<div>
+
+
+<div class="text-center font-weight-light mt-3">
     <div id="trailmap" ></div>
       <iframe 
       width="500"
