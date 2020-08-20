@@ -2,19 +2,14 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&callback=initMap">
 </script>
 
-<div id="map-container-google-1" class="mx-auto" style="width: 400px">
-<div class="text-center"><h1> Parks </h1><div>
+<div id="map-container-google-1" class="mx-auto" style="height: 500px, border:10px">
+<span class="border">
 <div class="text-center"><h2> Select a Park </h2></div>
 <%# <div class="mx-auto" style="width: 200px"> %>
     <%# <div style="display: flex";> %>
-        <div id="map" style="height:1000px; width:800px" class="flex-sm-column"></div>
+        <div id="map" style="height:500px; width:100%" class="flex-sm-column"></div>
 
-        <iframe
-            id="parkinfo"
-            width="600"
-            height="450"
-            frameborder="0" style="border:0" allowfullscreen>
-        </iframe>
+        
     <%# </div> %>
 </div>
     <script>
@@ -43,3 +38,29 @@
         }
     </script>
 
+</span>
+
+
+<div class="album text-muted">
+   <div class="container">
+      <div class="row">
+
+<% Park.all.each do |park|%>
+<div class="card" style="width: 18rem;">
+ <img class="card-img-top" src= "<%= park.image_url %>" alt="Card image cap"> 
+  <div class="card-body">
+    <h5 class="card-title"><%= park.name%>, <%=park.state%></h5>
+    <p class="card-text">Number of Trails: <%=park.trailcounter%></p>
+    <%=link_to "Check Out This Park", park_path(park), :class=>"btn btn-primary"%>
+  </div>
+</div>
+<%end%>
+
+</div>
+      <div class="row">
+        <div class="col-md-12">
+          <%#= paginate Park.all %>
+        </div>
+      </div>
+   </div>
+</div>
