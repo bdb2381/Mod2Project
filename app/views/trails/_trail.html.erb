@@ -1,4 +1,15 @@
-       <div class="card m-3" style="width: 20rem;">
+<!--To use this partial, use the following commented out CSS code to on the rendering page above the each statement
+
+<div class="album ">
+   <div class="container-fluid">
+      <div class="row">
+
+ -->
+       
+       
+<!--Code below only works with in a loop, like .each-->    
+<!--Example: something.each do |trail|  -->   
+         <div class="card m-3" style="width: 20rem;">
             <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
 
               <div class="card-body">
@@ -9,3 +20,14 @@
                 <%=link_to "Check Out This Trail", trail_path(trail), :class=>"btn btn-primary"%>
               </div>
          </div>
+
+
+
+<!--To use this partial, use the following commented out CSS code after the render code on rendering page
+
+      <%end%>
+    </div>
+  </div>
+</div>
+
+ -->
