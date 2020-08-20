@@ -8,14 +8,9 @@
    <div class="container-fluid">
       <div class="row">
           <%Trail.bystate(state:params[:state]).each do |trail| %>
-            <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
-              <div class="card-body">
-                <h5 class="card-title"><%= trail.name%>, <%=trail.park.state%></h5>
-                <p class="card-text"> <%=trail.direction%></p>
-                <%=link_to "Check Out This trail", trail_path(trail), :class=>"btn btn-primary"%>
-              </div>
-            </div>
+
+          <%= render partial: "trails/trail", locals: {trail: trail}%>
+          
           <%end%>
     </div>
   </div>
@@ -29,14 +24,9 @@
    <div class="container-fluid">
       <div class="row">
           <% Trail.all.each do |trail|%>
-            <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
-              <div class="card-body">
-                <h5 class="card-title"><%= trail.name%>, <%=trail.park.state%></h5>
-                <p class="card-text"> <%=trail.direction%></p>
-                <%=link_to "Check Out This trail", trail_path(trail), :class=>"btn btn-primary"%>
-              </div>
-            </div>
+          
+            <%= render partial: "trails/trail", locals: {trail: trail}%>
+          
           <%end%>
     </div>
   </div>

@@ -12,13 +12,12 @@ Rails.application.routes.draw do
   resources :activities
   resources :parks
   resources :trails
-# get '/', to: 
-# root to:  "/"
+
 
 root to: "homepage#index"
 
 
-# get "map", to: "homepage#show"
+
 
 get "map", to: "parks#index"
 

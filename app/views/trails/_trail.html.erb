@@ -1,0 +1,11 @@
+       <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
+
+              <div class="card-body">
+                <h5 class="card-title"><%= trail.name%>, <%=trail.park.state%></h5>
+
+                <p class="card-text"> <%=trail.direction.titleize%>. <%=trail.length%> mile(s) long <p><%=trail.park.name%></p>
+                
+                <%=link_to "Check Out This Trail", trail_path(trail), :class=>"btn btn-primary"%>
+              </div>
+         </div>
