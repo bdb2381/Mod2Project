@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  # devise_for :users
   resources :equipment
   resources :liked_trails
   resources :users, only: [:show, :edit]
@@ -19,9 +19,17 @@ get "map", to: "parks#index"
 
 get "trails/state/:state", to: "trails#index", as: "trail_state"
 
-devise_scope :user do
-  get 'login', to: 'devise/sessions#new'
-  get 'join', to: 'devise/registrations#new'
-end
+devise_for :users,
+  :path => "usuarios",
+  :path_names => {
+    :sign_in => 'login',
+    :sign_out => 'logout',
+    :password => 'secret',
+    :confirmation => 'verification',
+    :unlock => 'unblock',
+    :registration => 'register',
+    :sign_up => 'join' }
 
-end
+
+
+end # end draw do 
