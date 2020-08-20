@@ -1,19 +1,21 @@
-
-
-<div id="map-container-google-1" class="mx-auto" style="height: 500px, border:10px">
-<span class="border">
-<div class="text-center"><h2> Select a Park </h2></div>
-
-    <script defer
+<script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&callback=initMap">
-    </script>
-<%# <div class="mx-auto" style="width: 200px"> %>
-    <%# <div style="display: flex";> %>
-        <div id="map" style="height:500px; width:100%" class="flex-sm-column"></div>
+</script>
 
-        
-    <%# </div> %>
-</div>
+
+<div class="text-center"><h1 class="font-weight-light"> Parks </h1><div>
+<div class="text-center"><h5 class="font-weight-light">Find Your Next Favorite Park</h5></div>
+
+    
+    <div id="map" style="height:1000px; width:800px" class="flex-sm-column mx-auto"></div>
+
+    <iframe
+        id="parkinfo"
+        width="600"
+        height="450"
+        frameborder="0" style="border:0" allowfullscreen>
+    </iframe>
+
     <script>
         var marker;
 
