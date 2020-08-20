@@ -4,8 +4,7 @@
   <%end%>
 <%end%>
 
-<%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%>
-<br>
+<%=link_to "Add Trail to My Likes", liked_trails_path(trail_id:@trail), method: :post%><br>
 
 This trail has been liked: <%=@trail.likescounter%>
 
@@ -20,12 +19,12 @@ This trail has been liked: <%=@trail.likescounter%>
 
 <div>
     <div id="trailmap" ></div>
-    <iframe 
-    width="500"
-    height="350"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=10" allowfullscreen>
-    </iframe>
+      <iframe 
+      width="500"
+      height="350"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=10" allowfullscreen>
+      </iframe>
 </div>
 
 

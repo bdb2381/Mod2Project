@@ -1,5 +1,5 @@
- <h1><%= link_to "California Trails", trail_state_path("CA")%></h1>
- <h1><%= link_to "Washington Trails", trail_state_path("WA")%></h1>
+<h1><%= link_to "California Trails", trail_state_path("CA")%></h1>
+<h1><%= link_to "Washington Trails", park_state_path("WA")%></h1>
 
     <% @trails.each do |trail| %>
         <%= link_to trail.name, trail %><br>
