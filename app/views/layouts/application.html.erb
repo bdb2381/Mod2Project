@@ -12,55 +12,42 @@
   <body>
 
 
-<p class="navbar-text float-right">
-  <% if user_signed_in? %>
-    Hi <strong><%= current_user.name %></strong>.
-    <%= link_to "| Your Liked Trails | ", user_path(current_user.id)%>
-    
-    <%= link_to 'Edit Account |', edit_user_registration_path, :class => 'navbar-link' %> 
-    
-    <%= link_to "Logout |", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <p class="navbar-text float-right">
+   
+    <div class="login">
+      <ul class="list-inline p-2 d-flex">
+      <% if user_signed_in? %>
+        <li class="font-weight-light list-inline-item ml-5">Hi <strong><%= current_user.name %></strong></li>
+        <li class="font-weight-light list-inline-item ml-auto ml-5"><%= link_to "Your Liked Trails", user_path(current_user.id)%></li>
+        <li class="font-weight-light list-inline-item ml-5"><%= link_to 'Edit Account', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li class="font-weight-light list-inline-item ml-5"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+      <% else %>
+          <li><%= link_to "Join", new_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+      <% end %>
+      </ul>
+    </div>
+  </p>
 
-  <% else %>
-    <%= link_to "Join |", new_user_registration_path, :class => 'navbar-link'  %> 
-    
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    
-  <% end %>
-</p>
+  <nav class="container-fluid-nav text-center">
 
-<p>
-<nav>
-  <input type="checkbox" id="menu" class="nav-menu">
-    <li><a href="#">Home</a></li>
- 
+      <li class="font-weight-light"><a href="/parks">Find a Park </a></li>
+      <a id="icon" class="navbar-brand" >
+        <img src="https://png.pngtree.com/element_our/sm/20180515/sm_5afae6128cc9c.jpg" width="60" height="60" alt="">
+      </a>
+      <li class="font-weight-light"><a href="/trails">Find a Trail</a></li>
 
-    <li><a href="#"><%= link_to "Find A Trail", trails_path()%></a></li>
-    <li><a href="#"><%= link_to "Find A Park", parks_path()%></a></li>
-    
- 
-</nav>
+  </nav>
 
-
-  
-  <!-- lines below show message if logged in or out successfully -->
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
+    <!-- lines below show message if logged in or out successfully -->
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
     <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-
-
-
-
-
-
-
-
-
-    <%= yield %>
+  <%= yield %>
 
   </body>
 
