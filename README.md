@@ -52,19 +52,21 @@ x You must include at least one class level ActiveRecord scope method. a. Your s
 
 x Your application must provide standard user authentication, including signup, login, logout, and passwords.
 
+
+
 !!!! Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
+
+
 
 x You must include and make use of a nested resource with the appropriate RESTful URLs.
 
-• You must include a nested new route with form that relates to the parent resource
+x # • You must include a nested new route with form that relates to the parent resource
 
-• You must include a nested index or show route
+x # • You must include a nested index or show route
 
-Your forms should correctly display validation errors.
-
-a. Your fields should be enclosed within a fields_with_errors class
-
-b. Error messages describing the validation failures must be present within the view.
+x Your forms should correctly display validation errors.
+  a. Your fields should be enclosed within a fields_with_errors class
+  b. Error messages describing the validation failures must be present within the view.
 
 Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
 
@@ -72,6 +74,3 @@ Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails ap
 
 • Your views should use helper methods and partials when appropriate.
 
-• Follow patterns in the Rails Style Guide and the Ruby Style Guide.
-
-Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
