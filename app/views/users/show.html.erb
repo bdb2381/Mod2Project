@@ -1,13 +1,30 @@
-<h1><%#= @user.username %></h1>
-<h4><%= @user.email%></h5>
+
+
 
 <h2>Your Liked Trails:</h2>
 
-<% @user.liked_trails.each do |liked_trail|%>
-  <h4> <%= link_to liked_trail.trail.name, trail_path(liked_trail)%> located in
 
-  <%= link_to liked_trail.trail.park.name, park_path(liked_trail.trail.park)%>, <%= liked_trail.trail.park.state%>   </h4><br>
-<%end%>
+ 
+
+<div class="album ">
+   <div class="container-fluid">
+      <div class="row">
+     <% @user.liked_trails.each do |liked_trail|%>
+            <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src= "<%= liked_trail.trail.image_url %>" alt="<%=liked_trail.trail.name%>"> 
+              <div class="card-body">
+                <h5 class="card-title"><%= liked_trail.trail.name%>, <%=liked_trail.trail.park.state%></h5>
+                <p class="card-text"> <%=liked_trail.trail.direction.titleize%>. <%=liked_trail.trail.length%> mile(s) long <p><%=liked_trail.trail.park.name%></p>
+                <%=link_to "Check Out This trail", trail_path(liked_trail), :class=>"btn btn-primary"%>
+              </div>
+            </div>
+          <%end%>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 
