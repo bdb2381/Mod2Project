@@ -41,26 +41,21 @@
 </span>
 
 
-<div class="album text-muted">
-   <div class="container">
+<div class="album ">
+   <div class="container-fluid">
       <div class="row">
 
-<% Park.all.each do |park|%>
-<div class="card" style="width: 18rem;">
- <img class="card-img-top" src= "<%= park.image_url %>" alt="Card image cap"> 
-  <div class="card-body">
-    <h5 class="card-title"><%= park.name%>, <%=park.state%></h5>
-    <p class="card-text">Number of Trails: <%=park.trailcounter%></p>
-    <%=link_to "Check Out This Park", park_path(park), :class=>"btn btn-primary"%>
+          <% Park.all.each do |park|%>
+            <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src= "<%= park.image_url %>" alt="<%=park.name%>"> 
+              <div class="card-body">
+                <h5 class="card-title"><%= park.name%>, <%=park.state%></h5>
+                <p class="card-text">Number of Trails: <%=park.trailcounter%></p>
+                <%=link_to "Check Out This Park", park_path(park), :class=>"btn btn-primary"%>
+              </div>
+            </div>
+          <%end%>
+
+    </div>
   </div>
-</div>
-<%end%>
-
-</div>
-      <div class="row">
-        <div class="col-md-12">
-          <%#= paginate Park.all %>
-        </div>
-      </div>
-   </div>
 </div>
