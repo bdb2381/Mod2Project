@@ -10,8 +10,11 @@ class Trail < ApplicationRecord
     liked_trails.count
   end
 
-
-
+  def self.bystate(state)
+    
+      Trail.joins(:park).where(parks: {state: state})
+  
+  end
 
 
 
