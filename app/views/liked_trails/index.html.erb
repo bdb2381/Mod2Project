@@ -5,10 +5,8 @@
       <div class="row">
      <% @user.liked_trails.each do |liked_trail|%>
           <%= render partial: "trails/trail", locals: {trail: liked_trail.trail}%>
+          </div>
       <%end%>
     </div>
   </div>
 </div>
-
-
-<!--Edit Account -- >

@@ -6,13 +6,13 @@ class TrailsController < ApplicationController
         state = params[:state]
         @trails = Trail.all
         @trails = @trails.filter { |trail| trail.park.state == state }
+
     end
 
     def show
         @trail = Trail.find(params[:id])
         @park = Park.find(params[:id])
     end
-
    
 
     

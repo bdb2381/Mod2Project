@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 
 root to: "homepage#index"
 
-
-
-
 get "map", to: "parks#index"
+
+get "/liked_trails", to: "liked_trails#create"
+post "/liked_trails", to: "liked_trails#create"
 
 get "trails/state/:state", to: "trails#index", as: "trail_state"
 get "parks/state/:state", to: "parks#index", as: "park_state"

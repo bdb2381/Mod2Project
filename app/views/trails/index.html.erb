@@ -1,40 +1,38 @@
  
-    <h2 class="font-weight-light text-center mt-5">See Trails by State</h2> 
-    <div class="row mx-md-n5 mt-3">
-        <h3 class="font-weight-light text-center col px-md-3"d-flex justify-content-centercenter"><%= link_to " California Trails", trail_state_path("CA")%><h3>
-        <h3 class="font-weight-light text-center col px-md-3"><%= link_to "Washington Trails", trail_state_path("WA")%></h3>
-    </div>
+<h2 class="font-weight-light text-center mt-5">See Trails by State</h2> 
+<div class="row mx-md-n5 mt-5">
+    <h3 class="font-weight-light text-center col px-md-3 d-flex justify-content-center"><%= link_to "California Trails", trail_state_path("CA")%><h3>
+    <h3 class="font-weight-light text-center col px-md-3"><%= link_to "Washington Trails", trail_state_path("WA")%></h3>
+    <h3 class="font-weight-light text-center col px-md-3 d-flex justify-content-center"><%= link_to "All Trails", trails_path%><h3>
+</div>
 
 <%# if there is a url request to show by state, show only that state%>
 <div class="album">
    <div class="container-fluid text-center">
         <div class="d-flex justify-content-center row">
-
-          <% Trail.bystate(state:params[:state]).each do |trail| %>
+        <% Trail.bystate(state:params[:state]).each do |trail| %>
             <div class="card m-3" style="width: 20rem;">
             <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
-              <div class="card-body">
+            <div class="card-body">
                 <h5 class="card-title font-weight-light"><%= trail.name%>, <%=trail.park.state%></h5>
                 <p class="card-text font-weight-light"> <%=trail.direction%></p>
-                <%=link_to "Check Out This trail", trail_path(trail), :class=>"btn btn-primary"%>
-              </div>
+                <a class="btn btn-info btn-sm font-weight-light" href="/trails/<%=trail.id%>">Check Out This Park</a>
             </div>
-          <%end%>
+            </div>
+        <%end%>
     </div>
   </div>
 </div>
 
-
 <%if !params[:state]%>
 <%# if there is no request for trails by state, show all the trails%>
-
-<div class="album font-weight-light">
-   <div class="container-fluid text-center">
+    <div class="album font-weight-light">
+    <div class="container-fluid text-center">
         <div class="d-flex justify-content-center row">
-          <% Trail.all.each do |trail|%>
-            <%= render partial: "trails/trail", locals: {trail: trail}%>
-          <%end%>
+            <% Trail.all.each do |trail|%>
+                <%= render partial: "trails/trail", locals: {trail: trail}%>
+            <%end%>
+            </div>
         </div>
     </div>
-</div>
 <%end%>
