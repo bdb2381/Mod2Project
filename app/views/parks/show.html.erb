@@ -7,6 +7,8 @@
         <%= @park.zipcode %><br>
 </div>
 
+<img src= "<%= @park.image_url %>" class="rounded mx-auto d-block img-fluid" width="700" height="400"> 
+
 <div class="d-flex justify-content-center row">
     <div>
         <div id="parkmap" ></div>
@@ -18,13 +20,19 @@
         </iframe>
     </div>
 </div>
-<img src= "<%= @park.image_url %>" class="rounded mx-auto d-block img-fluid" width="900" height="400"> 
 
-<div class="text-center mt-5 font-weight-light">    
-    <h2 class="font-weight-light">Trails</h2>
-    <h3 class="font-weight-light mt-5"><%= link_to @trail.name, trail_path %></h3><br>
-    <div class="attribute-wrapper">
-        <b>Length:</b> <%= @trail.length%>mi<br>
-        <img src= "<%= @trail.image_url %>" class="rounded mx-auto d-block img-fluid" width="900" height="400"> 
+<h4 class="font-weight-light text-center mt-5">Trails in This Park</h4>
+
+<div class="album text-center">
+   <div class="container-fluid">
+      <div class="d-flex justify-content-center row">
+        <div class="card m-3" style="width: 20rem;">
+            <img class="card-img-top" src= "<%= @trail.image_url %>" alt="<%=@trail.name%>"> 
+            <div class="card-body">
+                <h5 class="card-title font-weight-light"><%= link_to @trail.name, trail_path%></h5>
+                <h6 class="font-weight-light"><p class="card-text">Length <%=@trail.length%></p></h6>
+            </div>
+        </div>
     </div>
+  </div>
 </div>

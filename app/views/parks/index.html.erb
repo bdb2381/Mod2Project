@@ -7,8 +7,6 @@
 
     <div id="map" style="height:500px; " class="flex-sm-column mx-auto"></div>
 
-    
-
     <script>
         var marker;
 
@@ -37,22 +35,21 @@
 
 </span>
 
-
 <div class="album">
    <div class="container-fluid">
       <div class="d-flex justify-content-center row">
 
           <% Park.all.each do |park|%>
                 <div class="card m-3" style="width: 20rem;">
-                <img class="card-img-top" src= "<%= park.image_url %>" alt="<%=park.name%>"> 
-                <div class="card-body">
-                    <h5 class="card-title font-weight-light"><%= park.name%>, <%=park.state%></h5>
-                    <h6 class="font-weight-light"><p class="card-text">Number of Trails: <%=park.trailcounter%></p></h6>
-                    <a class="btn btn-info btn-sm font-weight-light" href="/parks/<%=park.id%>">Check Out This Park</a>
-                </div>
+                    <img class="card-img-top" src= "<%= park.image_url %>" alt="<%=park.name%>"> 
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-light"><%= park.name%>, <%=park.state%></h5>
+                        <h6 class="font-weight-light"><p class="card-text">Number of Trails: <%=park.trailcounter%></p></h6>
+                        <a class="btn btn-info btn-sm font-weight-light" href="/parks/<%=park.id%>">Check Out This Park</a>
+                    </div>
                 </div>
           <%end%>
-          
+       
     </div>
   </div>
 </div>

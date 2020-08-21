@@ -9,15 +9,16 @@
        
 <!--Code below only works with in a loop, like .each-->    
 <!--Example: something.each do |trail|  -->   
-<div class="card m-3" style="width: 20rem;">
-  <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
+<div class="card m-3 mt-5" style="width: 20rem;">
+  <img class="card-img-top font-weight-light" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
 
     <div class="card-body">
-      <h5 class="card-title"><%= trail.name%>, <%=trail.park.state%></h5>
+      <h5 class="card-title font-weight-light"><%= trail.name%>, <%=trail.park.state%></h5>
 
-      <p class="card-text"> <%=trail.direction.titleize%>. <%=trail.length%> mile(s) long <p><%=trail.park.name%></p>
+      <b><p class="card-text font-weight-light"> <%=trail.direction.titleize%>. <%=trail.length%> mile(s) long <p><%=trail.park.name%></p></b>
       
-      <%=link_to "Check Out This Trail", trail_path(trail), :class=>"btn btn-primary"%>
+      <a class="btn btn-info btn-sm font-weight-light" href="/trails/<%=trail.id%>">Check Out This Trail</a>
+
     </div>
 </div>
 
