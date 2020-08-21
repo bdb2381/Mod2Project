@@ -1,11 +1,6 @@
 class LikedTrailsController < ApplicationController
   before_action :authenticate_user!
   
-  def index
-    @user = current_user
-  end
-
-  
   def create 
     if LikedTrail.find_or_create_by(trail_id: params[:trail_id], user_id: current_user.id)
       # flash[:notices]
