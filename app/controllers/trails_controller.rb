@@ -6,7 +6,6 @@ class TrailsController < ApplicationController
         state = params[:state]
         @trails = Trail.all
         @trails = @trails.filter { |trail| trail.park.state == state }
-
     end
 
     def show
