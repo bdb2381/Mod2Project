@@ -4,6 +4,13 @@
   <%end%>
 <%end%>
 
+<%if flash[:alert]%>
+  <%flash.each do |alert, msg| %>
+    <h5 class="font-weight-light"></h5>
+  
+  <%end%>
+<%end%>
+
 <div class="text-center font-weight-light mt-5">
   <h2 class="font-weight-light"><%= @trail.name %></h2><br>
 
@@ -31,13 +38,13 @@
 </div>
 
 
-<div class="d-flex justify-content-center row">
+<div class="d-flex justify-content-center row mb-5 ">
   <div class="mt-3">
         <iframe 
-        width="500"
-        height="350"
+        width="700"
+        height="400"
         frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=10" allowfullscreen>
+        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBKX-cXzMaQuMgh-VYgJM40ymprn_B3Zz8&q=<%=@trail.trail_latitude%>,<%=@trail.trail_longitude%>&zoom=15"allowfullscreen>
         </iframe>
   </div>
 </div>
