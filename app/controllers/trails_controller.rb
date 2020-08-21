@@ -11,7 +11,7 @@ class TrailsController < ApplicationController
 
     def show
         @trail = Trail.find(params[:id])
-        @park = Park.find(params[:id])
+        
     end
    
 
