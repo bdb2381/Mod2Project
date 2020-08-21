@@ -11,14 +11,7 @@
    <div class="container-fluid text-center">
         <div class="d-flex justify-content-center row">
         <% Trail.bystate(state:params[:state]).each do |trail| %>
-            <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src= "<%= trail.image_url %>" alt="<%=trail.name%>"> 
-            <div class="card-body">
-                <h5 class="card-title font-weight-light"><%= trail.name%>, <%=trail.park.state%></h5>
-                <p class="card-text font-weight-light"> <%=trail.direction%></p>
-                <a class="btn btn-info btn-sm font-weight-light" href="/trails/<%=trail.id%>">Check Out This Park</a>
-            </div>
-            </div>
+           <%= render partial: "trails/trail", locals: {trail: trail}%>
         <%end%>
     </div>
   </div>

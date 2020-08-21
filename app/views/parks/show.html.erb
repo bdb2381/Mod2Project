@@ -23,16 +23,12 @@
 
 <h4 class="font-weight-light text-center mt-5">Trails in This Park</h4>
 
-<div class="album text-center">
-   <div class="container-fluid">
-      <div class="d-flex justify-content-center row">
-        <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src= "<%= @trail.image_url %>" alt="<%=@trail.name%>"> 
-            <div class="card-body">
-                <h5 class="card-title font-weight-light"><%= link_to @trail.name, trail_path%></h5>
-                <h6 class="font-weight-light"><p class="card-text">Length <%=@trail.length%></p></h6>
-            </div>
-        </div>
+<div class="album font-weight-light">
+    <div class="container-fluid text-center">
+        <div class="d-flex justify-content-center row">
+            <% @park.trails.each do |trail|%>
+            <%= render partial: "trails/trail", locals: {trail: trail}%>
+        <%end%>
     </div>
   </div>
 </div>
