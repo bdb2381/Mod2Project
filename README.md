@@ -13,6 +13,7 @@ gem 'jquery-rails'
 
 ## Configuration
 Add gems to gem file and "bundle install"
+You will need a Google Maps Embed API key. The API key included here is for visual demostration only and does not work. 
 
 ## Database creation
 This code was developed using POSTGRES; be sure to setup your DB in your preferred DB environment. 
@@ -30,4 +31,4 @@ Be mindufl that trails and parks have explicitly set IDs so they match each othe
 
 # Deployment instructions
 As currently developed, setup is for local use on localhost:3000/  
- 
+You will need a Google Maps Embed API key. The API key included here is for visual demostration only and does not work. 
