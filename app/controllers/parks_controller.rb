@@ -5,6 +5,7 @@ class ParksController < ApplicationController
     def index
         @trails = Trail.all
         @parks = Park.all
+        
     end 
 
     def show 

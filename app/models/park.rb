@@ -10,7 +10,15 @@ class Park < ApplicationRecord
     
   end
 
+  # def thingstodo
+    # self.activities.each do |activity|
+    #    activity.activity_ty
+    # # end 
+  #   self.activities.distinct.pluck(:activity_type).each do |x|
+  #      x
+  #   end 
 
+  # end
 
 
 end

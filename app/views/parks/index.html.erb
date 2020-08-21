@@ -47,7 +47,14 @@
                 <img class="card-img-top" src= "<%= park.image_url %>" alt="<%=park.name%>"> 
                 <div class="card-body">
                     <h5 class="card-title font-weight-light"><%= park.name%>, <%=park.state%></h5>
-                    <h6 class="font-weight-light"><p class="card-text">Number of Trails: <%=park.trailcounter%></p></h6>
+                    <h6 class="font-weight-light"><p class="card-text">Number of Trails: <%=park.trailcounter%> <br>
+                    <p>
+                        Activities Available:<br> 
+                        <% park.activities.distinct.pluck(:activity_type).each do |x|%>
+                            <%= x %>
+                        <%end %> 
+                            </p>
+                    </p></h6>
                     <a class="btn btn-info btn-sm font-weight-light" href="/parks/<%=park.id%>">Check Out This Park</a>
                 </div>
                 </div>
